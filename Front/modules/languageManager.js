@@ -1,7 +1,10 @@
 // Module pour la gestion de la page des langues
+import PageTransition from './pageTransition.js';
+
 export class LanguageManager {
     constructor() {
         this.languages = null;
+        this.pageTransition = new PageTransition();
         this.flagMapping = {
             'us': 'us',
             'fr': 'fr',
@@ -66,12 +69,16 @@ export class LanguageManager {
 
             const languageItem = document.createElement('div');
             languageItem.className = 'language-item';
-            languageItem.onclick = () => this.selectLanguage(langCode);
 
             languageItem.innerHTML = `
               <img src="../flags/${flagCode}.png" alt="${language.subtitle_language}" class="flag" />
               <span class="language-name">${language.subtitle_language}</span>
             `;
+
+            // Attacher l'événement avec transition
+            this.pageTransition.attachToLanguageItem(languageItem, () => {
+                this.selectLanguage(langCode);
+            });
 
             grid.appendChild(languageItem);
         });
@@ -83,15 +90,8 @@ export class LanguageManager {
         localStorage.setItem('selectedLanguage', langCode);
         console.log(`Langue sélectionnée: ${langCode}`);
 
-        // Effet visuel de sélection
-        const selectedItem = event.currentTarget;
-        selectedItem.style.transform = 'scale(0.95)';
-        selectedItem.style.boxShadow = '0 0 20px var(--color-accent)';
-
-        // Retourner à la page principale après un court délai
-        setTimeout(() => {
-            window.location.href = '../index.html';
-        }, 300);
+        // Naviguer vers la page principale (la transition est gérée par pageTransition)
+        window.location.href = '../index.html';
     }
 
     // Obtient la langue actuellement sélectionnée

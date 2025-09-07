@@ -14,24 +14,9 @@
         <!-- Les langues seront chargées dynamiquement ici -->
       </div>
       <div class="menu">
-        <button
-          class="menu-button"
-          id="back-btn"
-          onclick="window.location.href='../index.html'"
-        >
-          Back
-        </button>
+        <button class="menu-button" id="back-btn">Back</button>
       </div>
     </div>
     <script type="module" src="../script.js"></script>
-    <script type="module">
-      import LanguageManager from "../modules/languageManager.js";
-
-      // Initialiser le gestionnaire de langues quand le DOM est chargé
-      document.addEventListener("DOMContentLoaded", async function () {
-        const languageManager = new LanguageManager();
-        await languageManager.init();
-      });
-    </script>
   </body>
 </html>
