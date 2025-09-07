@@ -1,10 +1,12 @@
 // Module pour la gestion de la page des langues
 import PageTransition from './pageTransition.js';
+import { getTranslationManager } from './translationManager.js';
 
 export class LanguageManager {
     constructor() {
         this.languages = null;
         this.pageTransition = new PageTransition();
+        this.translationManager = getTranslationManager();
         this.flagMapping = {
             'us': 'us',
             'fr': 'fr',
@@ -86,8 +88,8 @@ export class LanguageManager {
 
     // Sélectionne une langue
     selectLanguage(langCode) {
-        // Sauvegarder la langue sélectionnée
-        localStorage.setItem('selectedLanguage', langCode);
+        // Sauvegarder la langue sélectionnée et mettre à jour les traductions
+        this.translationManager.changeLanguage(langCode);
         console.log(`Langue sélectionnée: ${langCode}`);
 
         // Naviguer vers la page principale (la transition est gérée par pageTransition)

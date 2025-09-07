@@ -4,10 +4,13 @@
     "button_quit": "Quit",
     "button_load_game": "Continue",
     "button_settings": "Settings",
+    "button_options": "Options",
+    "button_stats": "Stats",
     "button_languages": "Languages",
     "button_credits": "Credits",
     "button_back": "Back",
     "title_select_language": "Select your language",
+    "title_game": "Cellular Clash",
     "subtitle_language": "English"
   },
   "fr": {
@@ -15,10 +18,13 @@
     "button_quit": "Quitter",
     "button_load_game": "Continuer",
     "button_settings": "Réglages",
+    "button_options": "Options",
+    "button_stats": "Statistiques",
     "button_languages": "Langues",
     "button_credits": "Crédits",
     "button_back": "Retour",
     "title_select_language": "Sélectionnez votre langue",
+    "title_game": "Cellular Clash",
     "subtitle_language": "Français"
   },
   "es": {
@@ -26,10 +32,13 @@
     "button_quit": "Salir",
     "button_load_game": "Continuar",
     "button_settings": "Configuración",
+    "button_options": "Opciones",
+    "button_stats": "Estadísticas",
     "button_languages": "Idiomas",
     "button_credits": "Créditos",
     "button_back": "Volver",
     "title_select_language": "Selecciona tu idioma",
+    "title_game": "Cellular Clash",
     "subtitle_language": "Español"
   },
   "de": {
@@ -37,10 +46,13 @@
     "button_quit": "Beenden",
     "button_load_game": "Fortfahren",
     "button_settings": "Einstellungen",
+    "button_options": "Optionen",
+    "button_stats": "Statistiken",
     "button_languages": "Sprachen",
     "button_credits": "Danksagungen",
     "button_back": "Zurück",
     "title_select_language": "Wählen Sie Ihre Sprache",
+    "title_game": "Cellular Clash",
     "subtitle_language": "Deutsch"
   },
   "it": {
@@ -48,10 +60,13 @@
     "button_quit": "Esci",
     "button_load_game": "Continua",
     "button_settings": "Impostazioni",
+    "button_options": "Opzioni",
+    "button_stats": "Statistiche",
     "button_languages": "Lingue",
     "button_credits": "Crediti",
     "button_back": "Indietro",
     "title_select_language": "Seleziona la tua lingua",
+    "title_game": "Cellular Clash",
     "subtitle_language": "Italiano"
   },
   "tr": {
@@ -59,10 +74,13 @@
     "button_quit": "Çıkış",
     "button_load_game": "Devam Et",
     "button_settings": "Ayarlar",
+    "button_options": "Seçenekler",
+    "button_stats": "İstatistikler",
     "button_languages": "Diller",
     "button_credits": "Kredi",
     "button_back": "Geri",
     "title_select_language": "Dilinizi seçin",
+    "title_game": "Cellular Clash",
     "subtitle_language": "Türkçe"
   },
   "pt": {
@@ -70,10 +88,13 @@
     "button_quit": "Sair",
     "button_load_game": "Continuar",
     "button_settings": "Configurações",
+    "button_options": "Opções",
+    "button_stats": "Estatísticas",
     "button_languages": "Idiomas",
     "button_credits": "Créditos",
     "button_back": "Voltar",
     "title_select_language": "Selecione seu idioma",
+    "title_game": "Cellular Clash",
     "subtitle_language": "Português"
   },
   "al": {

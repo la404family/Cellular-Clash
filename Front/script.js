@@ -2,9 +2,16 @@
 import LightEffect from './modules/lightEffect.js';
 import PageTransition from './modules/pageTransition.js';
 import LanguageManager from './modules/languageManager.js';
+import { getTranslationManager } from './modules/translationManager.js';
+import { getConfigManager } from './modules/configManager.js';
 
-// Initialiser les transitions de page
+// Initialiser les gestionnaires
+const configManager = getConfigManager();
 const pageTransition = new PageTransition();
+const translationManager = getTranslationManager();
+
+// Initialiser le système de traductions
+translationManager.init();
 
 // Vérifier si on est sur la page index
 if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
