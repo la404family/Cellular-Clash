@@ -1,16 +1,17 @@
 // Module pour l'effet de lumière douce sur les boutons
 export class LightEffect {
-    constructor() {
+    constructor(buttonSelector = '.menu-button') {
+        this.buttonSelector = buttonSelector;
         this.buttons = [];
         this.currentIndex = 0;
         this.isAnimating = false;
         this.animationDuration = 1500; // Durée de l'effet de lumière en ms
-        this.cycleDuration = 3000; // Cycle complet toutes les 3 secondes
+        this.cycleDuration = 4000; // Cycle complet toutes les 4 secondes pour les boutons de jeu
     }
 
-    // Initialise l'effet avec les boutons du menu
+    // Initialise l'effet avec les boutons spécifiés
     init() {
-        this.buttons = document.querySelectorAll('.menu-button');
+        this.buttons = document.querySelectorAll(this.buttonSelector);
         if (this.buttons.length > 0) {
             this.startLightCycle();
         }
@@ -114,6 +115,22 @@ export class LightEffect {
                 break;
             case 'credits-btn':
                 glowColor = 'rgba(138, 43, 226, 0.8)';
+                break;
+            // Boutons de jeu
+            case 'place-cells-btn':
+                glowColor = 'rgba(138, 43, 226, 0.8)'; // Violet pour place cells
+                break;
+            case 'special-1-btn':
+                glowColor = 'rgba(255, 215, 0, 0.8)'; // Jaune pour lightning
+                break;
+            case 'special-2-btn':
+                glowColor = 'rgba(255, 147, 0, 0.8)'; // Orange pour shield
+                break;
+            case 'special-3-btn':
+                glowColor = 'rgba(62, 193, 211, 0.8)'; // Bleu cyan pour healing
+                break;
+            case 'special-4-btn':
+                glowColor = 'rgba(25, 118, 210, 0.8)'; // Bleu pour power boost
                 break;
         }
 

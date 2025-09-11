@@ -33,7 +33,9 @@ export class LanguageManager {
             'cz': 'cz',
             'rs': 'rs',
             'hr': 'hr',
-            'ua': 'ua'
+            'ua': 'ua',
+            'arabic': 'arabic',
+            'hebrew': 'hebrew'
         };
     }
 
@@ -45,12 +47,25 @@ export class LanguageManager {
 
     // Charge les langues depuis le fichier JSON
     async loadLanguages() {
-        try {
-            const response = await fetch('../languages.json');
-            this.languages = await response.json();
-        } catch (error) {
-            console.error('Erreur lors du chargement des langues:', error);
+        const possiblePaths = [
+            './data/languages.json',     // Depuis la racine Front
+            '../data/languages.json',    // Depuis un sous-dossier de Front
+            '../../data/languages.json'  // Depuis un sous-dossier de sous-dossier
+        ];
+
+        for (const path of possiblePaths) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    this.languages = await response.json();
+                    return;
+                }
+            } catch (error) {
+                // Continue avec le prochain chemin
+            }
         }
+
+        console.error('Impossible de charger le fichier languages.json depuis tous les chemins possibles');
     }
 
     // Affiche toutes les langues
@@ -107,14 +122,26 @@ export class LanguageManager {
             langCode = LanguageManager.getSelectedLanguage();
         }
 
-        try {
-            const response = await fetch('../languages.json');
-            const languages = await response.json();
-            return languages[langCode] || languages['us'];
-        } catch (error) {
-            console.error('Erreur lors du chargement des traductions:', error);
-            return null;
+        const possiblePaths = [
+            './data/languages.json',     // Depuis la racine Front
+            '../data/languages.json',    // Depuis un sous-dossier de Front
+            '../../data/languages.json'  // Depuis un sous-dossier de sous-dossier
+        ];
+
+        for (const path of possiblePaths) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const languages = await response.json();
+                    return languages[langCode] || languages['us'];
+                }
+            } catch (error) {
+                // Continue avec le prochain chemin
+            }
         }
+
+        console.error('Impossible de charger le fichier languages.json depuis tous les chemins possibles');
+        return null;
     }
 }
 

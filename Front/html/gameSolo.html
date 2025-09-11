@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="title_solo_game">Solo Mode - Cellular Clash</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/icon-16.png" />
+  </head>
+  <body>
+    <div id="particles"></div>
+
+    <!-- Bouton retour en haut -->
+    <button class="menu-button back-game-btn" id="back-btn" title="Back to Menu">
+      <img src="../icons/arrow-left.svg" alt="Back" class="button-icon" />
+    </button>
+
+    <div class="container">
+      <!-- Header avec scores et informations -->
+      <div class="game-header">
+        <!-- Rangée supérieure : Scores Joueur et IA -->
+        <div class="score-row">
+          <div class="player-score-section">
+            <img src="../icons/person.svg" alt="Player" class="score-icon" />
+            <div class="score-info">
+              <span id="player-score" class="score-value">0</span>
+            </div>
+          </div>
+
+          <div class="ai-score-section">
+            <img src="../icons/robot.svg" alt="AI" class="score-icon" />
+            <div class="score-info">
+              <span id="ai-score" class="score-value">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rangée inférieure : Informations du jeu -->
+        <div class="game-info-section">
+          <div class="round-info">
+            <img src="../icons/hash.svg" alt="Round" class="round-icon" />
+            <span id="current-round">1</span>/10
+          </div>
+          <div class="timer">
+            <img src="../icons/clock.svg" alt="Timer" class="timer-icon" />
+            <span id="timer-display">15</span>s
+          </div>
+          <div class="game-status" id="game-status" data-translate="status_placement">
+            Placement Phase
+          </div>
+        </div>
+      </div>
+
+      <!-- Grille de jeu - Élément principal -->
+      <div class="game-grid-container">
+        <div class="grid" id="game-grid">
+          <!-- La grille 20x20 sera générée dynamiquement -->
+        </div>
+      </div>
+
+      <!-- Contrôles en dessous de la grille -->
+      <div class="game-controls">
+        <button class="game-button place-button" id="place-cells-btn" title="Place Cells">
+          <img src="../icons/grid-3x3.svg" alt="Place Cells" class="button-icon" />
+          <span class="badge" id="cells-badge">10</span>
+        </button>
+        <button class="game-button stats-button" id="special-1-btn" title="Lightning Attack">
+          <img src="../icons/lightning-fill.svg" alt="Lightning Attack" class="button-icon" />
+          <span class="badge" id="special-1-badge">3</span>
+        </button>
+        <button class="game-button options-button" id="special-2-btn" title="Shield Defense">
+          <img src="../icons/shield-fill.svg" alt="Shield Defense" class="button-icon" />
+          <span class="badge" id="special-2-badge">2</span>
+        </button>
+        <button
+          class="game-button languages-button"
+          id="special-3-btn"
+          title="Healing Support"
+        >
+          <img src="../icons/heart-pulse-fill.svg" alt="Healing Support" class="button-icon" />
+          <span class="badge" id="special-3-badge">1</span>
+        </button>
+        <button class="game-button credits-button" id="special-4-btn" title="Power Boost">
+          <img src="../icons/star-fill.svg" alt="Power Boost" class="button-icon" />
+          <span class="badge" id="special-4-badge">1</span>
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="../modules/gameSolo.js"></script>
+  </body>
+</html>

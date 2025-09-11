@@ -40,19 +40,25 @@ export class TranslationManager {
 
     // Charge les traductions depuis le fichier JSON
     async loadTranslations() {
-        try {
-            const response = await fetch('./languages.json');
-            this.translations = await response.json();
-        } catch (error) {
-            console.error('Erreur lors du chargement des traductions:', error);
-            // Fallback vers les traductions depuis un dossier parent si on est dans un sous-dossier
+        const possiblePaths = [
+            './data/languages.json',     // Depuis la racine Front
+            '../data/languages.json',    // Depuis un sous-dossier de Front
+            '../../data/languages.json'  // Depuis un sous-dossier de sous-dossier
+        ];
+
+        for (const path of possiblePaths) {
             try {
-                const response = await fetch('../languages.json');
-                this.translations = await response.json();
-            } catch (fallbackError) {
-                console.error('Erreur lors du chargement des traductions (fallback):', fallbackError);
+                const response = await fetch(path);
+                if (response.ok) {
+                    this.translations = await response.json();
+                    return;
+                }
+            } catch (error) {
+                // Continue avec le prochain chemin
             }
         }
+
+        console.error('Impossible de charger le fichier languages.json depuis tous les chemins possibles');
     }
 
     // Obtient une traduction pour une clé donnée
