@@ -1251,59 +1251,58 @@ body::after {
     margin-top: 0.3rem;
     gap: 0.6rem;
   }
-  }
+}
 
-  .player-score-section,
-  .ai-score-section,
-  .game-info-section {
-    padding: 1rem 1.5rem;
-    min-width: 160px;
-    gap: 0.8rem;
-  }
+.player-score-section,
+.ai-score-section,
+.game-info-section {
+  padding: 1rem 1.5rem;
+  min-width: 160px;
+  gap: 0.8rem;
+}
 
-  .score-value {
-    font-size: 1.8rem;
-  }
+.score-value {
+  font-size: 1.8rem;
+}
 
-  .round-info,
-  .timer,
-  .game-status {
-    font-size: 1rem;
-    padding: 0.4rem 0.8rem;
-  }
+.round-info,
+.timer,
+.game-status {
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+}
 
-  .timer {
-    font-size: 1.4rem;
-  }
+.timer {
+  font-size: 1.4rem;
+}
 
-  .score-icon {
-    width: 20px;
-    height: 20px;
-  }
+.score-icon {
+  width: 20px;
+  height: 20px;
+}
 
-  .timer-icon {
-    width: 18px;
-    height: 18px;
-  }
+.timer-icon {
+  width: 18px;
+  height: 18px;
+}
 
-  .grid {
-    width: 95%;
-    max-width: 400px;
-  }
+.grid {
+  width: 95%;
+  max-width: 400px;
+}
 
-  .game-controls {
-    gap: 0.6rem;
-  }
+.game-controls {
+  gap: 0.6rem;
+}
 
-  .game-button {
-    min-width: 55px;
-    min-height: 55px;
-  }
+.game-button {
+  min-width: 55px;
+  min-height: 55px;
+}
 
-  .back-game-btn {
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
-  }
+.back-game-btn {
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
 }
 
 /* Petites tablettes et grands mobiles */
